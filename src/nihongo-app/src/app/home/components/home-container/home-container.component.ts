@@ -1,0 +1,17 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-home-container',
+  templateUrl: './home-container.component.html',
+  styleUrls: ['./home-container.component.scss']
+})
+export class HomeContainerComponent implements OnInit {
+
+  title: string = "Nihongo - the Japanese Language Learning Tool";
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
