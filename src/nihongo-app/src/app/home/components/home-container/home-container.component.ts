@@ -1,17 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {MediaMatcher} from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home-container',
   templateUrl: './home-container.component.html',
   styleUrls: ['./home-container.component.scss']
 })
-export class HomeContainerComponent implements OnInit {
+export class HomeContainerComponent {
 
-  title: string = "Nihongo - the Japanese Language Learning Tool";
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
