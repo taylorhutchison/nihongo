@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './home/home.module';
 import { MatModule } from './mat/mat.module';
+import { PracticeModule } from './practice/practice.module';
+import { QuizesModule } from './quizes/quizes.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { MatModule } from './mat/mat.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatModule,
-    HomeModule
+    HomeModule,
+    PracticeModule,
+    QuizesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

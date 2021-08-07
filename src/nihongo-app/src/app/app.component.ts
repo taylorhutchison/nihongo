@@ -1,4 +1,4 @@
-import { MediaMatcher } from '@angular/cdk/layout';
+import { MediaMatcher, BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
@@ -9,17 +9,12 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 export class AppComponent {
   title: string = "Nihongo - the Japanese Language Learning Tool";
 
-  mobileQuery: MediaQueryList;
+  isMobile: boolean = false;
 
-  private _mobileQueryListener: () => void;
-
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
-    this.mobileQuery.addListener(this._mobileQueryListener);
+  constructor(private breakpointObserver: BreakpointObserver) {
+    breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
+      this.isMobile = result.matches;
+    });
   }
 
-  ngOnDestroy(): void {
-    this.mobileQuery.removeListener(this._mobileQueryListener);
-  }
 }

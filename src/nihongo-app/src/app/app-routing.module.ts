@@ -4,6 +4,8 @@ import { HomeContainerComponent } from './home/components/home-container/home-co
 
 const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule )},
+  { path: 'practice', loadChildren: () => import('./practice/practice.module').then(m => m.PracticeModule )},
+  { path: 'quizes', loadChildren: () => import('./quizes/quizes.module').then(m => m.QuizesModule )},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' }
 ];
