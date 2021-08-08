@@ -6,6 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   pull_request:
+    types: [opened, synchronize, reopened, closed]
     branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -26,9 +27,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: npm install
         run: npm install
+        working-directory: ./src/nihongo-app
       
       - name: ng test
         run: npm run test
+        working-directory: ./src/nihongo-app
         
       - name: ng build
         run: npm run build
+        working-directory: ./src/nihongo-app
