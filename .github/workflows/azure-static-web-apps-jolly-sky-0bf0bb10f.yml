@@ -20,6 +20,7 @@ jobs:
           submodules: true
       - name: Test
         run: npm run test
+        working-directory: /src/nihongo-app
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
