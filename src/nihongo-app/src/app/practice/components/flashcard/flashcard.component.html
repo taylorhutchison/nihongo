@@ -1,0 +1,8 @@
+<div (click)="switchSides()" class="flashcard-container">
+    <ng-container *ngIf="side=='front'">
+        {{front}}
+    </ng-container>
+    <ng-container *ngIf="side=='back'">
+        {{back}}
+    </ng-container>
+</div>

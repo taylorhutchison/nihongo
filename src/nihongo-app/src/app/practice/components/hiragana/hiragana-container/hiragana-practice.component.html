@@ -1,0 +1,7 @@
+<ng-container *ngIf="characters">
+
+    <app-flashcard *ngFor="let character of characters.hiragana" [front]="character[0]" [back]="character[1]">
+
+</app-flashcard>
+
+</ng-container>

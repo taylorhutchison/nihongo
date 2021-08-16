@@ -1,5 +1,6 @@
 import { MediaMatcher, BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { CharacterService } from './core/services/character.service';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,11 @@ export class AppComponent {
 
   isMobile: boolean = false;
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(private breakpointObserver: BreakpointObserver, private characterService: CharacterService) {
     breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
       this.isMobile = result.matches;
     });
+    characterService.load();
   }
 
 }

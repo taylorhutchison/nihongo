@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CharacterService } from 'src/app/core/services/character.service';
 
 @Component({
   selector: 'app-practice-container',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PracticeContainerComponent implements OnInit {
 
-  constructor() { }
+  characters: any;
+
+  constructor(private characterService: CharacterService) { }
 
   ngOnInit(): void {
+    this.characterService.characters.subscribe(characters => {
+      this.characters = characters;
+    });
   }
 
 }
