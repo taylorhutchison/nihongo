@@ -8,6 +8,8 @@ import { HomeModule } from './home/home.module';
 import { MatModule } from './mat/mat.module';
 import { PracticeModule } from './practice/practice.module';
 import { QuizesModule } from './quizes/quizes.module';
+import { CoreModule } from './core/core.module';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,8 @@ import { QuizesModule } from './quizes/quizes.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatModule,
-    HomeModule,
-    PracticeModule,
-    QuizesModule
+    CoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
